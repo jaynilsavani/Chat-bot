@@ -21,6 +21,8 @@ def course():
         graph.add((course_uniqueID, UNI.subjectOf , Literal(row["Subject"])))
         graph.add((course_uniqueID, DC.identifier, Literal(row["Catalog"])))
         graph.add((course_uniqueID, DC.description, Literal(row["Descr"])))
+        graph.add((course_uniqueID, UNI.creditIs, Literal(row["Class Units"],datatype=XSD.int)))
+        
         
 def get_folder_details():
    
@@ -121,6 +123,28 @@ def get_folder_details():
     
     graph.add( (UNIDATA.COMP6741, RDFS.comment, Literal(COMP6741_description) ))
     graph.add( (UNIDATA.SOEN6431, RDFS.comment, Literal(SOEN6431_description) ))
+    
+    COMP6741_outline = "file:"+os.sep+os.sep+ os.getcwd() + os.sep + "courses" + os.sep +"COMP6741"+ os.sep +"course_outline.pdf"
+    SOEN6431_outline = "file:"+os.sep+os.sep+ os.getcwd() + os.sep + "courses" + os.sep + "SOEN6431" + os.sep +"course_outline.pdf"
+    
+    graph.add((UNIDATA.COMP6741, RDFS.seeAlso, URIRef(quote(COMP6741_outline))))
+    graph.add((UNIDATA.SOEN6431, RDFS.seeAlso, URIRef(quote(SOEN6431_outline))))
+    
+    
+def student():
+    #adding 1st student details
+    graph.add((URIRef(UNIDATA.Manthan), RDF.type, UNI.Student))
+    graph.add((URIRef(UNIDATA.Manthan), FOAF.givenName, Literal("Manthan", lang="en")))
+    graph.add((URIRef(UNIDATA.Manthan), FOAF.familyName, Literal("Moradiya", lang="en")))
+    graph.add((URIRef(UNIDATA.Manthan), UNI.idnumberIs, Literal(40156072,datatype=XSD.int)))
+    graph.add((URIRef(UNIDATA.Manthan), FOAF.mbox, URIRef("Manthan@gmail.com")))
+    
+    #adding 2nd student details
+    graph.add((URIRef(UNIDATA.Jaynil), RDF.type, UNI.Student))
+    graph.add((URIRef(UNIDATA.Jaynil), FOAF.givenName, Literal("Jaynil", lang="en")))
+    graph.add((URIRef(UNIDATA.Jaynil), FOAF.familyName, Literal("Savani", lang="en")))
+    graph.add((URIRef(UNIDATA.Jaynil), UNI.idnumberIs, Literal(40156070,datatype=XSD.int)))
+    graph.add((URIRef(UNIDATA.Jaynil), FOAF.mbox, URIRef("Jaynil@gmail.com")))
         
 DBP = Namespace("http://dbpedia.org/resource/")
 UNI = Namespace("http://unibot.io/schema#")
@@ -140,6 +164,7 @@ graph.bind('foaf',FOAF)
 university()
 course()
 get_folder_details()
+student()
 
 graph.serialize(destination='knowledge_graph.ttl', format='turtle', encoding='utf-8')
 graph.serialize("knowledge_graph_in_nt_format.nt", format="nt")

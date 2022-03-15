@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dublin :<http://purl.org/dc/elements/1.1/> .
+@prefix uni : <http://uniboat.io/schema#> .
+
+uni:University
+    a rdfs:Class ;
+    rdfs:subClassOf foaf:Organization ;
+    rdfs:label "University"@en ;
+    rdfs:comment "This class defines the university" .
+
+uni:Course
+    a rdfs:Class ;
+    rdfs:label "Course"@en ;
+    rdfs:comment "This class defines the Courses" .
+
+uni:creditIs
+    a rdf:Property ;
+    rdfs:label "creditIs"@en ;
+    rdfs:comment "This property defines, credit of course" ;
+    rdfs:domain uni:Course ;
+
+uni:Subject
+    a rdfs:Class ;
+    rdfs:label "Subjects"@en ;
+    rdfs:comment "This class defines the Subjects" .
+
+uni:subjectOf
+    a rdf:Property ;
+    rdfs:label "subjectOf"@en ;
+    rdfs:comment "This property defines, course is belong to which subject" ;
+    rdfs:domain uni:Course ;
+    rdfs:range uni:Subject;
+
+uni:Lecture
+    a rdfs:Class ;
+    rdfs:label "Lecture"@en ;
+    rdfs:comment "This class defines the Lectures" .
+
+uni:slideIs
+    a rdf:Property ;
+    rdfs:label "slideIS"@en ;
+    rdfs:comment "This property defines the slides of the lecture" .
+
+uni:worksheetIs
+    a rdf:Property ;
+    rdfs:label "worksheetIs"@en ;
+    rdfs:comment "This property defines the worksheet of the lecture" .
+
+uni:Student
+    a rdfs:Class ;
+    rdfs:label "Student"@en ;
+    rdfs:comment "This class defines the students" .
+
+uni:idnumberIs
+    a rdf:Property ;
+    rdfs:label "idnumberIs"@en ;
+    rdfs:comment "This property defines, identification number of student" ;
+    rdfs:domain uni:Student ;
+
