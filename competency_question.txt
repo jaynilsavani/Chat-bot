@@ -1,0 +1,77 @@
+Q1: what is the course SOEN6431 about?
+
+Query: 
+q1 = g.query(
+     """SELECT ?course_outline ?description
+       WHERE {
+            ?course rdf:type uni:Course ;
+            uni:subjectOf "SOEN" ;
+            dc:identifier "6431" ;
+            dc:description ?description ;
+		OPTIONAL { ?course rdfs:seeAlso ?course_outline }
+        } """ )
+
+
+Q2: Which topics is Manthan competent in?
+
+Query:
+q2 = g.query(
+     """SELECT ?topics
+       WHERE {  
+        } """ )
+
+
+Q3: Which topics were covered in the first lecture in SOEN6431?
+
+Query:
+q2 = g.query(
+     """SELECT ?topics
+       WHERE {  
+        } """ )
+
+
+Q4: Which subjects are offered by SOEN department?
+
+Query: 
+q1 = g.query(
+     """SELECT ?name
+       WHERE {
+            ?course rdf:type uni:Course ;
+            uni:subjectOf "SOEN" ;
+	     	foaf:name ?name.
+        } """ )
+
+
+Q5: Show me the subjects related to Finance.
+
+Query: 
+q1 = g.query(
+     """SELECT ?name
+        WHERE{
+              ?course a uni:Course ;  
+              foaf:name ?name .
+              FILTER contains(lcase(?name),"Finance")  
+	} """)       
+
+
+Q6: How many subjects did Jaynil study?
+
+Query: 
+q1 = g.query()
+
+
+Q7: Provide the worksheet of 3rd week in COMP6741.
+
+Query: 
+q1 = g.query(
+	     """SELECT ?slide ?topic
+           WHERE{
+                ?lab a cb:Labs ;
+      	         cb:slideIs ?slide ;
+            	   rdfs:subClassOf ?lec.
+                ?lec a cb:Lecture ;
+                     dc:identifier "02" ;                          
+                     dc:isPartOf cbd:COMP6721 ;
+                     foaf:name ?topic .  	
+                }
+""")

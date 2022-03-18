@@ -42,14 +42,15 @@ def get_folder_details():
                 data["lec_no"] = splitted_file_path[-1].split("_")[1].split(".")[0]
                 data["uri"] = file_path
                 course_list.append(data)"""
-                lec = URIRef(UNIDATA +course_name+content_type+lec_no)
+                lec = URIRef(UNIDATA +course_name+"lec"+lec_no)
                 graph.add((lec, RDF.type, UNI.Lecture))
-                ss = course_name.upper()
-                graph.add((lec, DC.isPartOf, UNIDATA.ss))
+                graph.add((lec, DC.isPartOf, Literal(str(course_name))))
                 graph.add((lec, DC.identifier, Literal(str(lec_no))))
                 if content_type == "slides":
                     graph.add((lec, UNI.slideIs, URIRef(quote(file_path))))
+                print(content_type)    
                 if content_type == "worksheets":
+                    print("3")
                     graph.add((lec, UNI.worksheetIs, URIRef(quote(file_path))))   
                     
     lec_1_IS_description = "This week professor covered Intelligent Systems Introduction."
@@ -84,45 +85,39 @@ def get_folder_details():
     lec_8_SCM_description = "This week professor covered Program Slicing."
     lec_8_SCM_name = "Program Slicing"
 
-    graph.add( (UNIDATA.COMP6741slides1, RDFS.comment, Literal(lec_1_IS_description)) )
-    graph.add( (UNIDATA.COMP6741slides2, RDFS.comment, Literal(lec_2_IS_description)) )
-    graph.add( (UNIDATA.COMP6741slides3, RDFS.comment, Literal(lec_3_IS_description)) )
-    graph.add( (UNIDATA.COMP6741slides4, RDFS.comment, Literal(lec_4_IS_description)) )
-    graph.add( (UNIDATA.COMP6741slides5, RDFS.comment, Literal(lec_5_IS_description)) )
-    graph.add( (UNIDATA.COMP6741slides6, RDFS.comment, Literal(lec_6_IS_description)) )
-    graph.add( (UNIDATA.COMP6741slides7, RDFS.comment, Literal(lec_7_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec1, RDFS.comment, Literal(lec_1_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec2, RDFS.comment, Literal(lec_2_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec3, RDFS.comment, Literal(lec_3_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec4, RDFS.comment, Literal(lec_4_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec5, RDFS.comment, Literal(lec_5_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec6, RDFS.comment, Literal(lec_6_IS_description)) )
+    graph.add( (UNIDATA.COMP6741lec7, RDFS.comment, Literal(lec_7_IS_description)) )
     
-    graph.add( (UNIDATA.SOEN6431slides1, RDFS.comment, Literal(lec_1_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides2, RDFS.comment, Literal(lec_2_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides3, RDFS.comment, Literal(lec_3_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides4, RDFS.comment, Literal(lec_4_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides5, RDFS.comment, Literal(lec_5_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides6, RDFS.comment, Literal(lec_6_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides7, RDFS.comment, Literal(lec_7_SCM_description)) )
-    graph.add( (UNIDATA.SOEN6431slides8, RDFS.comment, Literal(lec_8_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec1, RDFS.comment, Literal(lec_1_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec2, RDFS.comment, Literal(lec_2_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec3, RDFS.comment, Literal(lec_3_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec4, RDFS.comment, Literal(lec_4_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec5, RDFS.comment, Literal(lec_5_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec6, RDFS.comment, Literal(lec_6_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec7, RDFS.comment, Literal(lec_7_SCM_description)) )
+    graph.add( (UNIDATA.SOEN6431lec8, RDFS.comment, Literal(lec_8_SCM_description)) )
     
-    graph.add( (UNIDATA.COMP6741slides1, FOAF.name, Literal(lec_1_IS_name)) )
-    graph.add( (UNIDATA.COMP6741slides2, FOAF.name, Literal(lec_2_IS_name)) )
-    graph.add( (UNIDATA.COMP6741slides3, FOAF.name, Literal(lec_3_IS_name)) )
-    graph.add( (UNIDATA.COMP6741slides4, FOAF.name, Literal(lec_4_IS_name)) )
-    graph.add( (UNIDATA.COMP6741slides5, FOAF.name, Literal(lec_5_IS_name)) )
-    graph.add( (UNIDATA.COMP6741slides6, FOAF.name, Literal(lec_6_IS_name)) )
-    graph.add( (UNIDATA.COMP6741slides7, FOAF.name, Literal(lec_7_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec1, FOAF.name, Literal(lec_1_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec2, FOAF.name, Literal(lec_2_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec3, FOAF.name, Literal(lec_3_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec4, FOAF.name, Literal(lec_4_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec5, FOAF.name, Literal(lec_5_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec6, FOAF.name, Literal(lec_6_IS_name)) )
+    graph.add( (UNIDATA.COMP6741lec7, FOAF.name, Literal(lec_7_IS_name)) )
     
-    graph.add( (UNIDATA.SOEN6431slides1, FOAF.name, Literal(lec_1_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides2, FOAF.name, Literal(lec_2_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides3, FOAF.name, Literal(lec_3_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides4, FOAF.name, Literal(lec_4_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides5, FOAF.name, Literal(lec_5_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides6, FOAF.name, Literal(lec_6_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides7, FOAF.name, Literal(lec_7_SCM_name)) )
-    graph.add( (UNIDATA.SOEN6431slides8, FOAF.name, Literal(lec_8_SCM_name)) )
-    
-    COMP6741_description = "Intelligent Systems. This subject is of 4 credits. Knowledge representation and reasoning. Uncertainty and conflict resolution. Design of intelligent systems. Grammar-based, rule-based, and blackboard architectures. A project is required. Laboratory: two hours per week."
-    SOEN6431_description = "The course addresses both technical and managerial views of software comprehension and software maintenance issues. Topics covered in this course include: cognitive models, software visualization, CASE tools, reverse engineering, static and dynamic source code analysis, software configuration management, and introduction to current research topics in software maintenance and program comprehension. A project is required."
-    
-    graph.add( (UNIDATA.COMP6741, RDFS.comment, Literal(COMP6741_description) ))
-    graph.add( (UNIDATA.SOEN6431, RDFS.comment, Literal(SOEN6431_description) ))
+    graph.add( (UNIDATA.SOEN6431lec1, FOAF.name, Literal(lec_1_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec2, FOAF.name, Literal(lec_2_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec3, FOAF.name, Literal(lec_3_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec4, FOAF.name, Literal(lec_4_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec5, FOAF.name, Literal(lec_5_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec6, FOAF.name, Literal(lec_6_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec7, FOAF.name, Literal(lec_7_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec8, FOAF.name, Literal(lec_8_SCM_name)) )
     
     COMP6741_outline = "file:"+os.sep+os.sep+ os.getcwd() + os.sep + "courses" + os.sep +"COMP6741"+ os.sep +"course_outline.pdf"
     SOEN6431_outline = "file:"+os.sep+os.sep+ os.getcwd() + os.sep + "courses" + os.sep + "SOEN6431" + os.sep +"course_outline.pdf"
