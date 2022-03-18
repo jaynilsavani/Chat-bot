@@ -43,6 +43,11 @@ uni:slideIs
     rdfs:label "slideIS"@en ;
     rdfs:comment "This property defines the slides of the lecture" .
 
+uni:topicIs
+    a rdf:Property ;
+    rdfs:label "topicIs"@en ;
+    rdfs:comment "This property defines the topics pf the particular lecture" .
+
 uni:worksheetIs
     a rdf:Property ;
     rdfs:label "worksheetIs"@en ;
