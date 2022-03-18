@@ -47,10 +47,8 @@ def get_folder_details():
                 graph.add((lec, DC.isPartOf, Literal(str(course_name))))
                 graph.add((lec, DC.identifier, Literal(str(lec_no))))
                 if content_type == "slides":
-                    graph.add((lec, UNI.slideIs, URIRef(quote(file_path))))
-                print(content_type)    
+                    graph.add((lec, UNI.slideIs, URIRef(quote(file_path))))  
                 if content_type == "worksheets":
-                    print("3")
                     graph.add((lec, UNI.worksheetIs, URIRef(quote(file_path))))   
                     
     lec_1_IS_description = "This week professor covered Intelligent Systems Introduction."
@@ -124,7 +122,13 @@ def get_folder_details():
     
     graph.add((UNIDATA.COMP6741, RDFS.seeAlso, URIRef(quote(COMP6741_outline))))
     graph.add((UNIDATA.SOEN6431, RDFS.seeAlso, URIRef(quote(SOEN6431_outline))))
-    
+
+def topics():
+     topics = pd.read_csv(os.getcwd() + os.sep +"topics.csv",encoding="unicode_escape")
+     for i, row in topics.iterrows():
+         lec = URIRef(UNIDATA +row["course"]+"lec"+str(row["lec"]))
+         topic = URIRef(DBP + row["topic"])
+         graph.add((lec, UNI.topicIs, topic))
     
 def student():
     #adding 1st student details
@@ -160,6 +164,7 @@ university()
 course()
 get_folder_details()
 student()
+topics()
 
 graph.serialize(destination='knowledge_graph.ttl', format='turtle', encoding='utf-8')
 graph.serialize("knowledge_graph_in_nt_format.nt", format="nt")
