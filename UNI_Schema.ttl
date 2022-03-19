@@ -58,6 +58,21 @@ uni:Student
     rdfs:label "Student"@en ;
     rdfs:comment "This class defines the students" .
 
+uni:CompletedCourse
+  a rdfs:Class ;
+  rdfs:label "CompletedCourse"@en ;
+  rdfs:comment "defines all Completed Course by student" .
+
+uni:grade
+    a rdf:Property ;
+    rdfs:label "grade"@en ;
+    rdfs:comment "This property defines the grade of subject" .
+
+uni:courseIs
+    a rdf:Property ;
+    rdfs:label "courseIs"@en ;
+    rdfs:comment "This property defines the name of the course completed by student" .
+
 uni:idnumberIs
     a rdf:Property ;
     rdfs:label "idnumberIs"@en ;
