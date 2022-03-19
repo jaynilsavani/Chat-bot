@@ -18547,250 +18547,6 @@ unidata:COMP6421 a uni:Course ;
     uni:subjectOf "COMP" ;
     foaf:name "COMPILER DESIGN" .
 
-unidata:COMP6431lec1 uni:topicIs dbp:Cascading_Style_Sheets,
-        dbp:Code_refactoring,
-        dbp:Commercial_off-the-shelf,
-        dbp:Database,
-        dbp:Evolution,
-        dbp:Evolvability,
-        dbp:IBM,
-        dbp:Industry,
-        dbp:King_Arthur,
-        dbp:Lincoln_Near-Earth_Asteroid_Research,
-        dbp:Mathematics,
-        dbp:Middleware,
-        dbp:Operating_system,
-        dbp:Outsourcing,
-        dbp:Oxford_English_Dictionary,
-        dbp:Percival_Lowell,
-        dbp:Programming_language,
-        dbp:Proprietary_software,
-        dbp:Reverse_engineering,
-        dbp:Soen,
-        dbp:Software_testing,
-        dbp:Swimming,
-        dbp:Theorem,
-        dbp:Unified_Modeling_Language,
-        dbp:Unix,
-        dbp:Victorian_Railways_E_type_carriage .
-
-unidata:COMP6431lec2 uni:topicIs dbp:Capillary_wave,
-        dbp:Case_study,
-        dbp:Computer_program,
-        dbp:CrossTalk,
-        dbp:Design_rationale,
-        dbp:Ductility,
-        dbp:Evolution,
-        dbp:General_Idea,
-        dbp:Geneva,
-        dbp:Institute_of_Electrical_and_Electronics_Engineers,
-        dbp:International_Electrotechnical_Commission,
-        dbp:International_Organization_for_Standardization,
-        dbp:Internet_Standard,
-        dbp:Interoperability,
-        dbp:Maintainability,
-        dbp:Object-oriented_programming,
-        dbp:Open_source,
-        dbp:Paradigm_shift,
-        dbp:Piscataway_people,
-        dbp:Program_comprehension,
-        dbp:Regression_testing,
-        dbp:SMLC,
-        dbp:Sequence_analysis,
-        dbp:Software_development_process,
-        dbp:Solubility,
-        dbp:Spiral_model,
-        dbp:Vacuum,
-        dbp:Value-added_tax,
-        dbp:Web_server .
-
-unidata:COMP6431lec3 uni:topicIs dbp:Algorithm,
-        dbp:Automation,
-        dbp:Backtracking,
-        dbp:Bridge,
-        dbp:Chongqing,
-        dbp:Cognition,
-        dbp:Commercial_off-the-shelf,
-        dbp:Computer_network,
-        dbp:Evolution,
-        dbp:Function_point,
-        dbp:Hewlett-Packard,
-        dbp:Inference,
-        dbp:Institute_of_Electrical_and_Electronics_Engineers,
-        dbp:Interaction,
-        dbp:Lexical_analysis,
-        dbp:Mental_representation,
-        dbp:Modular_decomposition,
-        dbp:Modularity,
-        dbp:Nature,
-        dbp:Organizational_commitment,
-        dbp:Parsing,
-        dbp:Privacy,
-        dbp:Problem_domain,
-        dbp:Procedural_programming,
-        dbp:Program_comprehension,
-        dbp:Programming_domain,
-        dbp:Reading,
-        dbp:Reverse_engineering,
-        dbp:Semantics,
-        dbp:Software_bug,
-        dbp:Source_code,
-        dbp:Spencer_Hastings,
-        dbp:Structured_programming,
-        dbp:Traceability,
-        dbp:Victor_Basili,
-        dbp:Washington_metropolitan_area .
-
-unidata:COMP6431lec4 uni:topicIs dbp:Abstract_syntax_tree,
-        dbp:Algorithm,
-        dbp:Aliasing,
-        dbp:Americans_with_Disabilities_Act_of_1990,
-        dbp:California_Lutheran_University,
-        dbp:Code_coverage,
-        dbp:Construction,
-        dbp:Copy_propagation,
-        dbp:Dataflow,
-        dbp:Dead_code,
-        dbp:Debugging,
-        <http://dbpedia.org/resource/Decidability_(logic)>,
-        dbp:Definiteness_of_a_matrix,
-        <http://dbpedia.org/resource/Destructor_(computer_programming)>,
-        dbp:Ford_Focus,
-        dbp:Formal_grammar,
-        dbp:Gene_expression,
-        dbp:Graph_theory,
-        dbp:IBM_Rational_Rose_XDE,
-        <http://dbpedia.org/resource/Inheritance_(object-oriented_programming)>,
-        dbp:Instruction_pipelining,
-        dbp:Interview,
-        dbp:Java_virtual_machine,
-        dbp:Lattice_graph,
-        dbp:Machine_learning,
-        dbp:Memory_management,
-        dbp:Object-oriented_programming,
-        dbp:Offender_profiling,
-        dbp:Parse_tree,
-        dbp:Parsing,
-        dbp:Partition_of_a_set,
-        dbp:Programming_language,
-        dbp:Register_allocation,
-        dbp:Reverse_engineering,
-        dbp:Semantics,
-        dbp:Software_testing,
-        dbp:Strength_reduction,
-        dbp:String_theory,
-        dbp:Unified_Modeling_Language,
-        dbp:Upper_and_lower_bounds,
-        dbp:Wave_function .
-
-unidata:COMP6431lec5 uni:topicIs dbp:Algorithm,
-        dbp:Antisymmetric_relation,
-        dbp:Association_for_Computing_Machinery,
-        dbp:Clarence_Thomas,
-        dbp:Committee_of_the_whole,
-        dbp:Computer_science,
-        dbp:Connected_space,
-        dbp:Control_flow_analysis,
-        dbp:Copenhagen,
-        dbp:Dataflow,
-        dbp:Dependent_and_independent_variables,
-        dbp:Disjoint_sets,
-        dbp:Dot_product,
-        dbp:Fortran,
-        dbp:General_officer,
-        dbp:Glossary_of_graph_theory_terms,
-        dbp:Graph_theory,
-        dbp:Imagine_Software,
-        dbp:Intermediate_representation,
-        dbp:Interval_arithmetic,
-        dbp:Intuition,
-        dbp:Java_virtual_machine,
-        dbp:Markov_chain,
-        dbp:Multigraph,
-        dbp:Robert_Stephenson,
-        dbp:T-carrier,
-        dbp:The_Dominators,
-        <http://dbpedia.org/resource/Tranquility_(ISS_module)>,
-        dbp:Transitive_relation,
-        dbp:Tree_traversal,
-        dbp:Tricky_Stewart,
-        dbp:XTR .
-
-unidata:COMP6431lec6 uni:topicIs dbp:A_Dictionary_of_Modern_English_Usage,
-        dbp:Algorithm,
-        <http://dbpedia.org/resource/Conditional_(computer_programming)>,
-        dbp:Doctor_of_Philosophy,
-        dbp:Field_target,
-        dbp:Gene_expression,
-        dbp:IEEE_754,
-        <http://dbpedia.org/resource/Inheritance_(object-oriented_programming)>,
-        dbp:Split_album,
-        dbp:Telephone_numbering_plan,
-        dbp:Web_server .
-
-unidata:COMP6431lec7 uni:topicIs dbp:Asynchronous_transfer_mode,
-        dbp:Automation,
-        dbp:Cold_turkey,
-        dbp:College_of_Osteopathic_Medicine_of_the_Pacific,
-        dbp:Commercial_off-the-shelf,
-        dbp:Computer-aided_software_engineering,
-        dbp:Computer_program,
-        dbp:Data-flow_diagram,
-        dbp:Database,
-        dbp:Decomposition,
-        dbp:Evolution,
-        dbp:General_officer,
-        dbp:Information_technology,
-        dbp:Integer,
-        dbp:Interaction,
-        dbp:Interoperability,
-        dbp:Language_documentation,
-        dbp:Legacy_system,
-        <http://dbpedia.org/resource/Leverage_(TV_series)>,
-        dbp:Mainframe_computer,
-        dbp:Merchant_Prince,
-        dbp:Middleware,
-        dbp:Object-oriented_programming,
-        <http://dbpedia.org/resource/Overcome_(Alexandra_Burke_album)>,
-        dbp:Paycheck,
-        dbp:Payroll,
-        dbp:Regression_analysis,
-        dbp:Reliant_Motors,
-        dbp:Stateless_protocol,
-        dbp:Subsidy,
-        dbp:Sustainability,
-        dbp:Toilet_paper,
-        dbp:Transaction_processing,
-        dbp:Web_server,
-        dbp:Web_service,
-        dbp:Workflow .
-
-unidata:COMP6431lec8 uni:topicIs dbp:Agrawal,
-        dbp:Algorithm,
-        dbp:Association_for_Computing_Machinery,
-        dbp:Bernhard_Horwitz,
-        dbp:Bogdan_I_of_Moldavia,
-        dbp:Compiler,
-        dbp:Control-flow_graph,
-        dbp:Debugging,
-        dbp:Dependent_and_independent_variables,
-        dbp:Doctor_of_Philosophy,
-        dbp:Graph_theory,
-        dbp:Inter_Milan,
-        dbp:Janusz_the_Younger,
-        dbp:Joseph_Smith,
-        dbp:Michael_Binkley,
-        dbp:Reaching_definition,
-        dbp:Regression_testing,
-        dbp:Reverse_engineering,
-        dbp:Routing,
-        dbp:SIGPLAN,
-        dbp:SQL,
-        dbp:Source_code,
-        dbp:Thomas_W._Reps,
-        dbp:Transitive_relation,
-        dbp:Weiser_River .
-
 unidata:COMP6461 a uni:Course ;
     dc:description "Please see GRAD Calendar" ;
     dc:identifier "6461" ;
@@ -47454,9 +47210,19 @@ Prerequisite: JAZZ 200 or exemption, and written permission of the Department of
 
 unidata:Jaynil a uni:Student ;
     uni:idnumberIs "40156070"^^xsd:int ;
-    foaf:familyName "Savani"@en ;
-    foaf:givenName "Jaynil"@en ;
+    foaf:familyName "Savani" ;
+    foaf:givenName "Jaynil" ;
     foaf:mbox <Jaynil@gmail.com> .
+
+unidata:JaynilCOMP6741 a uni:CompletedCourse ;
+    uni:courseIs "COMP6741" ;
+    uni:grade "B" ;
+    foaf:givenName "Jaynil" .
+
+unidata:JaynilSOEN6431 a uni:CompletedCourse ;
+    uni:courseIs "SOEN6431" ;
+    uni:grade "A" ;
+    foaf:givenName "Jaynil" .
 
 unidata:KCEP a uni:Subject .
 
@@ -53963,9 +53729,19 @@ Prerequisite: Written permission of the Department of Music.""" ;
 
 unidata:Manthan a uni:Student ;
     uni:idnumberIs "40156072"^^xsd:int ;
-    foaf:familyName "Moradiya"@en ;
-    foaf:givenName "Manthan"@en ;
+    foaf:familyName "Moradiya" ;
+    foaf:givenName "Manthan" ;
     foaf:mbox <Manthan@gmail.com> .
+
+unidata:ManthanCOMP6741 a uni:CompletedCourse ;
+    uni:courseIs "COMP6741" ;
+    uni:grade "A" ;
+    foaf:givenName "Manthan" .
+
+unidata:ManthanSOEN6431 a uni:CompletedCourse ;
+    uni:courseIs "SOEN6431" ;
+    uni:grade "B" ;
+    foaf:givenName "Manthan" .
 
 unidata:NURS a uni:Subject .
 
@@ -64688,6 +64464,32 @@ unidata:SOEN6431lec1 a uni:Lecture ;
     dc:identifier "1" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_1.pdf> ;
+    uni:topicIs dbp:Cascading_Style_Sheets,
+        dbp:Code_refactoring,
+        dbp:Commercial_off-the-shelf,
+        dbp:Database,
+        dbp:Evolution,
+        dbp:Evolvability,
+        dbp:IBM,
+        dbp:Industry,
+        dbp:King_Arthur,
+        dbp:Lincoln_Near-Earth_Asteroid_Research,
+        dbp:Mathematics,
+        dbp:Middleware,
+        dbp:Operating_system,
+        dbp:Outsourcing,
+        dbp:Oxford_English_Dictionary,
+        dbp:Percival_Lowell,
+        dbp:Programming_language,
+        dbp:Proprietary_software,
+        dbp:Reverse_engineering,
+        dbp:Soen,
+        dbp:Software_testing,
+        dbp:Swimming,
+        dbp:Theorem,
+        dbp:Unified_Modeling_Language,
+        dbp:Unix,
+        dbp:Victorian_Railways_E_type_carriage ;
     rdfs:comment "This week professor covered Introduction to Software Evolution and Software Aging." ;
     foaf:name "Introduction to Software Evolution and Software Aging" .
 
@@ -64695,6 +64497,35 @@ unidata:SOEN6431lec2 a uni:Lecture ;
     dc:identifier "2" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_2.pdf> ;
+    uni:topicIs dbp:Capillary_wave,
+        dbp:Case_study,
+        dbp:Computer_program,
+        dbp:CrossTalk,
+        dbp:Design_rationale,
+        dbp:Ductility,
+        dbp:Evolution,
+        dbp:General_Idea,
+        dbp:Geneva,
+        dbp:Institute_of_Electrical_and_Electronics_Engineers,
+        dbp:International_Electrotechnical_Commission,
+        dbp:International_Organization_for_Standardization,
+        dbp:Internet_Standard,
+        dbp:Interoperability,
+        dbp:Maintainability,
+        dbp:Object-oriented_programming,
+        dbp:Open_source,
+        dbp:Paradigm_shift,
+        dbp:Piscataway_people,
+        dbp:Program_comprehension,
+        dbp:Regression_testing,
+        dbp:SMLC,
+        dbp:Sequence_analysis,
+        dbp:Software_development_process,
+        dbp:Solubility,
+        dbp:Spiral_model,
+        dbp:Vacuum,
+        dbp:Value-added_tax,
+        dbp:Web_server ;
     rdfs:comment "This week professor covered Software Maintenance and program comprehension." ;
     foaf:name "Software Maintenance and program comprehension" .
 
@@ -64702,6 +64533,42 @@ unidata:SOEN6431lec3 a uni:Lecture ;
     dc:identifier "3" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_3.pdf> ;
+    uni:topicIs dbp:Algorithm,
+        dbp:Automation,
+        dbp:Backtracking,
+        dbp:Bridge,
+        dbp:Chongqing,
+        dbp:Cognition,
+        dbp:Commercial_off-the-shelf,
+        dbp:Computer_network,
+        dbp:Evolution,
+        dbp:Function_point,
+        dbp:Hewlett-Packard,
+        dbp:Inference,
+        dbp:Institute_of_Electrical_and_Electronics_Engineers,
+        dbp:Interaction,
+        dbp:Lexical_analysis,
+        dbp:Mental_representation,
+        dbp:Modular_decomposition,
+        dbp:Modularity,
+        dbp:Nature,
+        dbp:Organizational_commitment,
+        dbp:Parsing,
+        dbp:Privacy,
+        dbp:Problem_domain,
+        dbp:Procedural_programming,
+        dbp:Program_comprehension,
+        dbp:Programming_domain,
+        dbp:Reading,
+        dbp:Reverse_engineering,
+        dbp:Semantics,
+        dbp:Software_bug,
+        dbp:Source_code,
+        dbp:Spencer_Hastings,
+        dbp:Structured_programming,
+        dbp:Traceability,
+        dbp:Victor_Basili,
+        dbp:Washington_metropolitan_area ;
     rdfs:comment "This week professor covered Program Analysis and Software Traceability" ;
     foaf:name "Program Analysis and Software Traceability" .
 
@@ -64709,6 +64576,47 @@ unidata:SOEN6431lec4 a uni:Lecture ;
     dc:identifier "4" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_4.pdf> ;
+    uni:topicIs dbp:Abstract_syntax_tree,
+        dbp:Algorithm,
+        dbp:Aliasing,
+        dbp:Americans_with_Disabilities_Act_of_1990,
+        dbp:California_Lutheran_University,
+        dbp:Code_coverage,
+        dbp:Construction,
+        dbp:Copy_propagation,
+        dbp:Dataflow,
+        dbp:Dead_code,
+        dbp:Debugging,
+        <http://dbpedia.org/resource/Decidability_(logic)>,
+        dbp:Definiteness_of_a_matrix,
+        <http://dbpedia.org/resource/Destructor_(computer_programming)>,
+        dbp:Ford_Focus,
+        dbp:Formal_grammar,
+        dbp:Gene_expression,
+        dbp:Graph_theory,
+        dbp:IBM_Rational_Rose_XDE,
+        <http://dbpedia.org/resource/Inheritance_(object-oriented_programming)>,
+        dbp:Instruction_pipelining,
+        dbp:Interview,
+        dbp:Java_virtual_machine,
+        dbp:Lattice_graph,
+        dbp:Machine_learning,
+        dbp:Memory_management,
+        dbp:Object-oriented_programming,
+        dbp:Offender_profiling,
+        dbp:Parse_tree,
+        dbp:Parsing,
+        dbp:Partition_of_a_set,
+        dbp:Programming_language,
+        dbp:Register_allocation,
+        dbp:Reverse_engineering,
+        dbp:Semantics,
+        dbp:Software_testing,
+        dbp:Strength_reduction,
+        dbp:String_theory,
+        dbp:Unified_Modeling_Language,
+        dbp:Upper_and_lower_bounds,
+        dbp:Wave_function ;
     rdfs:comment "This week professor covered Program Analysis: Data flow Analysis." ;
     foaf:name "Program Analysis: Data flow Analysis" .
 
@@ -64716,6 +64624,38 @@ unidata:SOEN6431lec5 a uni:Lecture ;
     dc:identifier "5" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_5.pdf> ;
+    uni:topicIs dbp:Algorithm,
+        dbp:Antisymmetric_relation,
+        dbp:Association_for_Computing_Machinery,
+        dbp:Clarence_Thomas,
+        dbp:Committee_of_the_whole,
+        dbp:Computer_science,
+        dbp:Connected_space,
+        dbp:Control_flow_analysis,
+        dbp:Copenhagen,
+        dbp:Dataflow,
+        dbp:Dependent_and_independent_variables,
+        dbp:Disjoint_sets,
+        dbp:Dot_product,
+        dbp:Fortran,
+        dbp:General_officer,
+        dbp:Glossary_of_graph_theory_terms,
+        dbp:Graph_theory,
+        dbp:Imagine_Software,
+        dbp:Intermediate_representation,
+        dbp:Interval_arithmetic,
+        dbp:Intuition,
+        dbp:Java_virtual_machine,
+        dbp:Markov_chain,
+        dbp:Multigraph,
+        dbp:Robert_Stephenson,
+        dbp:T-carrier,
+        dbp:The_Dominators,
+        <http://dbpedia.org/resource/Tranquility_(ISS_module)>,
+        dbp:Transitive_relation,
+        dbp:Tree_traversal,
+        dbp:Tricky_Stewart,
+        dbp:XTR ;
     rdfs:comment "This week professor covered Control flow analysis." ;
     foaf:name "Control flow analysis" .
 
@@ -64723,6 +64663,17 @@ unidata:SOEN6431lec6 a uni:Lecture ;
     dc:identifier "6" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_6.pdf> ;
+    uni:topicIs dbp:A_Dictionary_of_Modern_English_Usage,
+        dbp:Algorithm,
+        <http://dbpedia.org/resource/Conditional_(computer_programming)>,
+        dbp:Doctor_of_Philosophy,
+        dbp:Field_target,
+        dbp:Gene_expression,
+        dbp:IEEE_754,
+        <http://dbpedia.org/resource/Inheritance_(object-oriented_programming)>,
+        dbp:Split_album,
+        dbp:Telephone_numbering_plan,
+        dbp:Web_server ;
     rdfs:comment "This week professor covered Refactoring." ;
     foaf:name "Refactoring" .
 
@@ -64730,6 +64681,42 @@ unidata:SOEN6431lec7 a uni:Lecture ;
     dc:identifier "7" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_7.pdf> ;
+    uni:topicIs dbp:Asynchronous_transfer_mode,
+        dbp:Automation,
+        dbp:Cold_turkey,
+        dbp:College_of_Osteopathic_Medicine_of_the_Pacific,
+        dbp:Commercial_off-the-shelf,
+        dbp:Computer-aided_software_engineering,
+        dbp:Computer_program,
+        dbp:Data-flow_diagram,
+        dbp:Database,
+        dbp:Decomposition,
+        dbp:Evolution,
+        dbp:General_officer,
+        dbp:Information_technology,
+        dbp:Integer,
+        dbp:Interaction,
+        dbp:Interoperability,
+        dbp:Language_documentation,
+        dbp:Legacy_system,
+        <http://dbpedia.org/resource/Leverage_(TV_series)>,
+        dbp:Mainframe_computer,
+        dbp:Merchant_Prince,
+        dbp:Middleware,
+        dbp:Object-oriented_programming,
+        <http://dbpedia.org/resource/Overcome_(Alexandra_Burke_album)>,
+        dbp:Paycheck,
+        dbp:Payroll,
+        dbp:Regression_analysis,
+        dbp:Reliant_Motors,
+        dbp:Stateless_protocol,
+        dbp:Subsidy,
+        dbp:Sustainability,
+        dbp:Toilet_paper,
+        dbp:Transaction_processing,
+        dbp:Web_server,
+        dbp:Web_service,
+        dbp:Workflow ;
     rdfs:comment "This week professor covered Software and Data Migration." ;
     foaf:name "Software and Data Migration" .
 
@@ -64737,6 +64724,31 @@ unidata:SOEN6431lec8 a uni:Lecture ;
     dc:identifier "8" ;
     dc:isPartOf "SOEN6431" ;
     uni:slideIs <C%3A%5CUsers%5CManthan%20Moradiya%5CDesktop%5CChat-bot%5Ccourses%5CSOEN6431%5Cslides%5Cslides_8.pdf> ;
+    uni:topicIs dbp:Agrawal,
+        dbp:Algorithm,
+        dbp:Association_for_Computing_Machinery,
+        dbp:Bernhard_Horwitz,
+        dbp:Bogdan_I_of_Moldavia,
+        dbp:Compiler,
+        dbp:Control-flow_graph,
+        dbp:Debugging,
+        dbp:Dependent_and_independent_variables,
+        dbp:Doctor_of_Philosophy,
+        dbp:Graph_theory,
+        dbp:Inter_Milan,
+        dbp:Janusz_the_Younger,
+        dbp:Joseph_Smith,
+        dbp:Michael_Binkley,
+        dbp:Reaching_definition,
+        dbp:Regression_testing,
+        dbp:Reverse_engineering,
+        dbp:Routing,
+        dbp:SIGPLAN,
+        dbp:SQL,
+        dbp:Source_code,
+        dbp:Thomas_W._Reps,
+        dbp:Transitive_relation,
+        dbp:Weiser_River ;
     rdfs:comment "This week professor covered Program Slicing." ;
     foaf:name "Program Slicing" .
 

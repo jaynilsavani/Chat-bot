@@ -133,41 +133,41 @@ def topics():
 def student():
     #adding 1st student details
     graph.add((URIRef(UNIDATA.Manthan), RDF.type, UNI.Student))
-    graph.add((URIRef(UNIDATA.Manthan), FOAF.givenName, Literal("Manthan", lang="en")))
-    graph.add((URIRef(UNIDATA.Manthan), FOAF.familyName, Literal("Moradiya", lang="en")))
+    graph.add((URIRef(UNIDATA.Manthan), FOAF.givenName, Literal("Manthan")))
+    graph.add((URIRef(UNIDATA.Manthan), FOAF.familyName, Literal("Moradiya")))
     graph.add((URIRef(UNIDATA.Manthan), UNI.idnumberIs, Literal(40156072,datatype=XSD.int)))
     graph.add((URIRef(UNIDATA.Manthan), FOAF.mbox, URIRef("Manthan@gmail.com")))
     
     #adding completed courses with grade (1st student)
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), FOAF.givenName, Literal("Manthan", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), UNI.courseIs, Literal("SOEN6431", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), UNI.grade, Literal("B", lang="en")))
+    graph.add((URIRef(UNIDATA.ManthanSOEN6431), RDF.type, UNI.CompletedCourse))
+    graph.add((URIRef(UNIDATA.ManthanSOEN6431), FOAF.givenName, Literal("Manthan")))
+    graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.courseIs, Literal("SOEN6431")))
+    graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.grade, Literal("B")))
     
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), FOAF.givenName, Literal("Manthan", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), UNI.courseIs, Literal("COMP6741", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), UNI.grade, Literal("A", lang="en")))
+    graph.add((URIRef(UNIDATA.ManthanCOMP6741), RDF.type, UNI.CompletedCourse))
+    graph.add((URIRef(UNIDATA.ManthanCOMP6741), FOAF.givenName, Literal("Manthan")))
+    graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.courseIs, Literal("COMP6741")))
+    graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.grade, Literal("A")))
     
     
     
     #adding 2nd student details
     graph.add((URIRef(UNIDATA.Jaynil), RDF.type, UNI.Student))
-    graph.add((URIRef(UNIDATA.Jaynil), FOAF.givenName, Literal("Jaynil", lang="en")))
-    graph.add((URIRef(UNIDATA.Jaynil), FOAF.familyName, Literal("Savani", lang="en")))
+    graph.add((URIRef(UNIDATA.Jaynil), FOAF.givenName, Literal("Jaynil")))
+    graph.add((URIRef(UNIDATA.Jaynil), FOAF.familyName, Literal("Savani")))
     graph.add((URIRef(UNIDATA.Jaynil), UNI.idnumberIs, Literal(40156070,datatype=XSD.int)))
     graph.add((URIRef(UNIDATA.Jaynil), FOAF.mbox, URIRef("Jaynil@gmail.com")))
     
     #adding completed courses with grade (2nd student)
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), FOAF.givenName, Literal("Jaynil", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), UNI.courseIs, Literal("SOEN6431", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanSOEN6431), UNI.grade, Literal("A", lang="en")))
+    graph.add((URIRef(UNIDATA.JaynilSOEN6431), RDF.type, UNI.CompletedCourse))
+    graph.add((URIRef(UNIDATA.JaynilSOEN6431), FOAF.givenName, Literal("Jaynil")))
+    graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.courseIs, Literal("SOEN6431")))
+    graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.grade, Literal("A")))
     
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), FOAF.givenName, Literal("Jaynil", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), UNI.courseIs, Literal("COMP6741", lang="en")))
-    graph.add((URIRef(URIDATA.ManthanCOMP6741), UNI.grade, Literal("B", lang="en")))
+    graph.add((URIRef(UNIDATA.JaynilCOMP6741), RDF.type, UNI.CompletedCourse))
+    graph.add((URIRef(UNIDATA.JaynilCOMP6741), FOAF.givenName, Literal("Jaynil")))
+    graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.courseIs, Literal("COMP6741")))
+    graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.grade, Literal("B")))
         
 DBP = Namespace("http://dbpedia.org/resource/")
 UNI = Namespace("http://unibot.io/schema#")
