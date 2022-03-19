@@ -1,7 +1,7 @@
 Q1: what is the course SOEN6431 about?
 
 Query: 
-q1 = g.query(
+q1 = graph.query(
      """SELECT ?course_outline ?description
        WHERE {
             ?course rdf:type uni:Course ;
@@ -15,7 +15,7 @@ q1 = g.query(
 Q2: Which topics is Manthan competent in?
 
 Query:
-q2 = g.query(
+q2 = graph.query(
      """SELECT ?topics
        WHERE {  
 		?course a uni:CompletedCourse ;
@@ -30,7 +30,7 @@ q2 = g.query(
 Q3: Which topics were covered in the first lecture of SOEN6431?
 
 Query:
-q2 = g.query(
+q2 = graph.query(
      """SELECT ?topics
        WHERE {  
             ?course rdf:type uni:Lecture ;
@@ -43,7 +43,7 @@ q2 = g.query(
 Q4: Which subjects are offered by SOEN department?
 
 Query: 
-q1 = g.query(
+q1 = graph.query(
      """SELECT ?name
        WHERE {
             ?course rdf:type uni:Course ;
@@ -55,7 +55,7 @@ q1 = g.query(
 Q5: Show me the subjects related to Finance.
 
 Query: 
-q1 = g.query(
+q1 = graph.query(
      """SELECT ?name
         WHERE{
               ?course a uni:Course ;  
@@ -67,7 +67,7 @@ q1 = g.query(
 Q6: How many subjects did Jaynil study?
 
 Query: 
-q1 = g.query(
+q1 = graph.query(
 		"""SELECT (COUNT(?course) as ?total)
 		WHERE{
 			?course a uni:CompletedCourse ;
@@ -79,14 +79,16 @@ q1 = g.query(
 Q7: Provide the worksheets of 3rd and 4th week in COMP6741.
 
 Query: 
-q1 = g.query(
+q1 = graph.query(
 	     """SELECT ?work_sheets
-           WHERE{
-                ?lec a uni:Lecture ;
-                     dc:identifier "3", "4" ;                                                  
-                     dc:isPartOf "COMP6741" ;
-			   uni:worksheetIs ?work_sheets .		
-                }
+			WHERE{
+                		?lec a uni:Lecture ;
+                     		dc:isPartOf "COMP6741" ;
+                     		uni:worksheetIs ?work_sheets .
+				{?lec dc:identifier "3" ; }
+      			UNION
+      			{?lec dc:identifier "4" ; }
+                	}
 """)
 
 
@@ -94,7 +96,7 @@ Q8: Provide me the 4th lectures detail of SOEN 6431.
 
 Query:
 q1 = graph.query(
-			"""SELECT ?slide ?topics
+			"""SELECT ?slide ?topics ?work_sheets
 			WHERE{
 				?lec a uni:Lecture ;
                      	dc:identifier "4" ;                                                  
@@ -105,26 +107,25 @@ q1 = graph.query(
 """)
 
 
-Q9: Tell me about Concordia University.
+Q9: In which subjects Jaynil scored grade A?
 
 Query:
 q1 = graph.query(
-			"""SELECT ?details
+			"""SELECT ?courses
 			WHERE{
-				?university a uni:University ;
-						rdf:label "Concordia University" ;
-						rdf:seeAlso ?details
+				?course 
 			}
 """)
 
 
-Q10: Which course covers "SPARQL"?
+Q10: Which lecture covers "SPARQL"?
 
 Query:
 q1 = graph.query(
 			"""SELECT ?names
 			WHERE{
 				?lec a uni:Lecture ;
-				uni:topicIs dbp:SPARQL .
+				uni:topicIs dbp:SPARQL ;
+    				foaf:name ?names .
 			}
 """)
