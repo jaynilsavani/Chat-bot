@@ -18,15 +18,25 @@ Query:
 q2 = g.query(
      """SELECT ?topics
        WHERE {  
+		?course a uni:CompletedCourse ;
+			  foaf:givenName "Manthan" ;		
+			  uni:courseIs ?courses .
+		?name rdf:type uni:Lecture ;
+			dc:isPartOf ?courses ;
+			uni:topicIs ?topics .	
         } """ )
 
 
-Q3: Which topics were covered in the first lecture in SOEN6431?
+Q3: Which topics were covered in the first lecture of SOEN6431?
 
 Query:
 q2 = g.query(
      """SELECT ?topics
        WHERE {  
+            ?course rdf:type uni:Lecture ;
+			  dc:isPartOf "SOEN6431" ;
+			  dc:identifier "1" ;
+			  uni:topicIs ?topics .		
         } """ )
 
 
@@ -50,28 +60,71 @@ q1 = g.query(
         WHERE{
               ?course a uni:Course ;  
               foaf:name ?name .
-              FILTER contains(lcase(?name),"Finance")  
+              FILTER contains((?name),"Finance")  
 	} """)       
 
 
 Q6: How many subjects did Jaynil study?
 
 Query: 
-q1 = g.query()
+q1 = g.query(
+		"""SELECT (COUNT(?course) as ?total)
+		WHERE{
+			?course a uni:CompletedCourse ;
+				  foaf:givenName "Jaynil" .
+		}
+""")
 
 
-Q7: Provide the worksheet of 3rd week in COMP6741.
+Q7: Provide the worksheets of 3rd and 4th week in COMP6741.
 
 Query: 
 q1 = g.query(
-	     """SELECT ?slide ?topic
+	     """SELECT ?work_sheets
            WHERE{
-                ?lab a cb:Labs ;
-      	         cb:slideIs ?slide ;
-            	   rdfs:subClassOf ?lec.
-                ?lec a cb:Lecture ;
-                     dc:identifier "02" ;                          
-                     dc:isPartOf cbd:COMP6721 ;
-                     foaf:name ?topic .  	
+                ?lec a uni:Lecture ;
+                     dc:identifier "3", "4" ;                                                  
+                     dc:isPartOf "COMP6741" ;
+			   uni:worksheetIs ?work_sheets .		
                 }
+""")
+
+
+Q8: Provide me the 4th lectures detail of SOEN 6431.
+
+Query:
+q1 = graph.query(
+			"""SELECT ?slide ?topics
+			WHERE{
+				?lec a uni:Lecture ;
+                     	dc:identifier "4" ;                                                  
+                     	dc:isPartOf "SOEN6431" ;
+				uni:slideIs ?slide ;
+				uni:topicIs ?topics .
+			}
+""")
+
+
+Q9: Tell me about Concordia University.
+
+Query:
+q1 = graph.query(
+			"""SELECT ?details
+			WHERE{
+				?university a uni:University ;
+						rdf:label "Concordia University" ;
+						rdf:seeAlso ?details
+			}
+""")
+
+
+Q10: Which course covers "SPARQL"?
+
+Query:
+q1 = graph.query(
+			"""SELECT ?names
+			WHERE{
+				?lec a uni:Lecture ;
+				uni:topicIs dbp:SPARQL .
+			}
 """)
