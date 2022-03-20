@@ -103,6 +103,7 @@ q1 = graph.query(
                      	dc:isPartOf "SOEN6431" ;
 				uni:slideIs ?slide ;
 				uni:topicIs ?topics .
+OPTIONAL {?lec uni:worksheetIs ?work_sheets} 
 			}
 """)
 
@@ -111,9 +112,18 @@ Q9: In which subjects Jaynil scored grade A?
 
 Query:
 q1 = graph.query(
-			"""SELECT ?courses
+			"""SELECT ?name
 			WHERE{
-				?course 
+				?course a uni:CompletedCourse ;
+  						foaf:givenName "Jaynil" ;
+        				uni:grade "A" ;
+            			uni:courseIs ?courseID .
+  				?courses a uni:Course ;
+            			dc:identifier ?code ;
+               			uni:subjectOf ?sub ;
+                  		foaf:name ?name .
+  FILTER contains((?courseID), ?code)
+  FILTER contains((?courseID), ?sub)
 			}
 """)
 
