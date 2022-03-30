@@ -44,12 +44,14 @@ def get_folder_details():
                 course_list.append(data)"""
                 lec = URIRef(UNIDATA +course_name+"lec"+lec_no)
                 graph.add((lec, RDF.type, UNI.Lecture))
-                graph.add((lec, DC.isPartOf, Literal(str(course_name))))
+                graph.add((lec, DC.isPartOf, URIRef(UNIDATA + str(course_name))))
                 graph.add((lec, DC.identifier, Literal(str(lec_no))))
                 if content_type == "slides":
                     graph.add((lec, UNI.slideIs, URIRef(quote(file_path))))  
                 if content_type == "worksheets":
-                    graph.add((lec, UNI.worksheetIs, URIRef(quote(file_path))))   
+                    graph.add((lec, UNI.worksheetIs, URIRef(quote(file_path)))) 
+                if content_type == "labs":
+                    graph.add((lec, UNI.labIs, URIRef(quote(file_path)))) 
                     
     lec_1_IS_description = "This week professor covered Intelligent Systems Introduction."
     lec_1_IS_name = "Intelligent Systems Introduction"
@@ -108,7 +110,7 @@ def get_folder_details():
     graph.add( (UNIDATA.COMP6741lec6, FOAF.name, Literal(lec_6_IS_name)) )
     graph.add( (UNIDATA.COMP6741lec7, FOAF.name, Literal(lec_7_IS_name)) )
     
-    graph.add( (UNIDATA.SOEN6431lec1, FOAF.name, Literal(lec_1_SCM_name)) )
+    graph.add( (UNIDATA.SOEN6431lec1, FOAF.name, Literal(lec_1_SCM_name)) ) 
     graph.add( (UNIDATA.SOEN6431lec2, FOAF.name, Literal(lec_2_SCM_name)) )
     graph.add( (UNIDATA.SOEN6431lec3, FOAF.name, Literal(lec_3_SCM_name)) )
     graph.add( (UNIDATA.SOEN6431lec4, FOAF.name, Literal(lec_4_SCM_name)) )
@@ -116,6 +118,16 @@ def get_folder_details():
     graph.add( (UNIDATA.SOEN6431lec6, FOAF.name, Literal(lec_6_SCM_name)) )
     graph.add( (UNIDATA.SOEN6431lec7, FOAF.name, Literal(lec_7_SCM_name)) )
     graph.add( (UNIDATA.SOEN6431lec8, FOAF.name, Literal(lec_8_SCM_name)) )
+
+    
+    #adding reading material
+    graph.add( (UNIDATA.COMP6741lec1, UNI.readingIs, URIRef("https://plato.stanford.edu/entries/artificial-intelligence/")) )
+    graph.add( (UNIDATA.COMP6741lec2, UNI.readingIs, URIRef("https://concordiauniversity.on.worldcat.org/oclc/897466408")) )
+    graph.add( (UNIDATA.COMP6741lec3, UNI.readingIs, URIRef("https://concordiauniversity.on.worldcat.org/oclc/897466408")) )
+    graph.add( (UNIDATA.COMP6741lec4, UNI.readingIs, URIRef("https://concordiauniversity.on.worldcat.org/oclc/897466408")) )
+    graph.add( (UNIDATA.COMP6741lec5, UNI.readingIs, URIRef("https://concordiauniversity.on.worldcat.org/oclc/897466408")) )
+    graph.add( (UNIDATA.COMP6741lec6, UNI.readingIs, URIRef("https://concordiauniversity.on.worldcat.org/oclc/314121652")) )
+    graph.add( (UNIDATA.COMP6741lec7, UNI.readingIs, URIRef("https://concordiauniversity.on.worldcat.org/oclc/960211579")) )
     
     COMP6741_outline = "file:"+os.sep+os.sep+ os.getcwd() + os.sep + "courses" + os.sep +"COMP6741"+ os.sep +"course_outline.pdf"
     SOEN6431_outline = "file:"+os.sep+os.sep+ os.getcwd() + os.sep + "courses" + os.sep + "SOEN6431" + os.sep +"course_outline.pdf"
@@ -140,12 +152,12 @@ def student():
     
     #adding completed courses with grade (1st student)
     graph.add((URIRef(UNIDATA.ManthanSOEN6431), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(UNIDATA.ManthanSOEN6431), FOAF.givenName, Literal("Manthan")))
+    graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.studentIs, URIRef(UNIDATA.Manthan)))
     graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.courseIs, Literal("SOEN6431")))
     graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.grade, Literal("B")))
     
     graph.add((URIRef(UNIDATA.ManthanCOMP6741), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(UNIDATA.ManthanCOMP6741), FOAF.givenName, Literal("Manthan")))
+    graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.studentIs, URIRef(UNIDATA.Manthan)))
     graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.courseIs, Literal("COMP6741")))
     graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.grade, Literal("A")))
     
@@ -160,12 +172,12 @@ def student():
     
     #adding completed courses with grade (2nd student)
     graph.add((URIRef(UNIDATA.JaynilSOEN6431), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(UNIDATA.JaynilSOEN6431), FOAF.givenName, Literal("Jaynil")))
+    graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.studentIs, URIRef(UNIDATA.Jaynil)))
     graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.courseIs, Literal("SOEN6431")))
     graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.grade, Literal("A")))
     
     graph.add((URIRef(UNIDATA.JaynilCOMP6741), RDF.type, UNI.CompletedCourse))
-    graph.add((URIRef(UNIDATA.JaynilCOMP6741), FOAF.givenName, Literal("Jaynil")))
+    graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.studentIs, URIRef(UNIDATA.Jaynil)))
     graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.courseIs, Literal("COMP6741")))
     graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.grade, Literal("B")))
         

@@ -53,10 +53,27 @@ uni:worksheetIs
     rdfs:label "worksheetIs"@en ;
     rdfs:comment "This property defines the worksheet of the lecture" .
 
+uni:labIs
+    a rdf:Property ;
+    rdfs:label "labIs"@en ;
+    rdfs:comment "This property defines the lab of the lecture" .
+
+uni:readingIs
+    a rdf:Property ;
+    rdfs:label "readingIs"@en ;
+    rdfs:comment "This property defines the reading material of the lecture" .
+
 uni:Student
     a rdfs:Class ;
     rdfs:label "Student"@en ;
     rdfs:comment "This class defines the students" .
+
+uni:studentIs
+    a rdf:Property ;
+    rdfs:label "studentIs"@en ;
+    rdfs:comment "This property defines the student" .
+    rdfs:domain uni:CompletedCourse ;
+    rdfs:range uni:Student;
 
 uni:CompletedCourse
   a rdfs:Class ;
