@@ -38,6 +38,11 @@ uni:Lecture
     rdfs:label "Lecture"@en ;
     rdfs:comment "This class defines the Lectures" .
 
+uni:Lab
+    a rdfs:Class ;
+    rdfs:label "Lab"@en ;
+    rdfs:comment "This class defines the Lab of course" .
+
 uni:slideIs
     a rdf:Property ;
     rdfs:label "slideIS"@en ;
@@ -52,11 +57,6 @@ uni:worksheetIs
     a rdf:Property ;
     rdfs:label "worksheetIs"@en ;
     rdfs:comment "This property defines the worksheet of the lecture" .
-
-uni:labIs
-    a rdf:Property ;
-    rdfs:label "labIs"@en ;
-    rdfs:comment "This property defines the lab of the lecture" .
 
 uni:readingIs
     a rdf:Property ;

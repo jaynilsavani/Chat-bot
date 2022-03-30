@@ -51,7 +51,9 @@ def get_folder_details():
                 if content_type == "worksheets":
                     graph.add((lec, UNI.worksheetIs, URIRef(quote(file_path)))) 
                 if content_type == "labs":
-                    graph.add((lec, UNI.labIs, URIRef(quote(file_path)))) 
+                    graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no),RDF.type, UNI.Lab))
+                    graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no), UNI.slideIs, URIRef(quote(file_path))))
+                    graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no), DC.isPartOf, URIRef(UNIDATA + str(course_name))))
                     
     lec_1_IS_description = "This week professor covered Intelligent Systems Introduction."
     lec_1_IS_name = "Intelligent Systems Introduction"
