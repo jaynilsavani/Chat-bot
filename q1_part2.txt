@@ -1,0 +1,84 @@
+PREFIX dbp: <http://dbpedia.org/resource/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX uni: <http://unibot.io/schema#>
+PREFIX unidata: <http://unibot.io/data#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+1. For a course c, list all covered topics t, printing out their English labels and their DBpedia URI,
+together with the course event URI (e.g., ’lab3’) and resource URI (e.g., ’slides10’) where they
+appeared.
+
+Query:
+
+SELECT ?topics ?lec_no ?lecture ?slide
+			WHERE{
+				?course a uni:Course ;
+            			dc:identifier "6741" ;
+                        uni:subjectOf "COMP" .
+              
+                 ?lecture a uni:Lecture ;
+      					dc:isPartOf ?course ;
+           				dc:identifier ?lec_no ;
+               			uni:slideIs ?slide ;
+      					uni:topicIs ?topics .  
+			}
+			ORDER BY ?lec_no
+
+SELECT ?topics ?lab_no ?lab ?slide
+			WHERE{
+				?course a uni:Course ;
+            			dc:identifier "6741" ;
+                        uni:subjectOf "COMP" .
+              
+                 ?lab a uni:Lab ;
+      					dc:isPartOf ?course ;
+           				dc:identifier ?lab_no ;
+               			uni:slideIs ?slide ;
+      					uni:topicIs ?topics .  
+			}
+			ORDER BY ?lab_no
+
+
+2. For a given topic t (DBpedia URI), list all courses where they appear, together with a count, sorted
+by frequency
+
+Query:
+
+SELECT ?name (COUNT(?name) as ?count)
+			WHERE{
+				?course a uni:Course ;
+            		foaf:name ?name .
+  				{?lec a uni:Lecture ;
+           			dc:isPartOf ?course ;
+              		uni:topicIs dbp:DBpedia}
+  				UNION
+  				{?lab a uni:Lab ;
+           			dc:isPartOf ?course ;
+              		uni:topicIs dbp:DBpedia } .
+			} GROUP BY ?name ORDER BY ?count
+
+
+3. For a given topic t, list the precise course URI, course event URI and corresponding resource URI
+where the topic is covered (e.g., “NLP” is covered in COMP474 → Lecture 10→ Lab 10 → Lab
+Notes)
+
+Query:
+
+SELECT ?course ?lec_URI ?lab_slide ?lecture_URI ?lab_URI ?lec_number ?lab_number
+			WHERE{
+				?course a uni:Course .
+  				{?lec_URI a uni:Lecture ;
+            		dc:identifier ?lec_number ;
+           			dc:isPartOf ?course ;
+              		uni:slideIs ?lecture_URI ;
+              		uni:topicIs dbp:DBpedia }
+  				UNION
+  				 {?lab_URI a uni:Lab ;
+           			dc:isPartOf ?course ;
+                	dc:identifier ?lab_number ;
+                    uni:slideIs ?lab_slide ;
+              		uni:topicIs dbp:DBpedia } .
+			} ORDER BY ?lec_number

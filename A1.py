@@ -52,6 +52,7 @@ def get_folder_details():
                     graph.add((lec, UNI.worksheetIs, URIRef(quote(file_path)))) 
                 if content_type == "labs":
                     graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no),RDF.type, UNI.Lab))
+                    graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no), DC.identifier, Literal(str(lec_no))))
                     graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no), UNI.slideIs, URIRef(quote(file_path))))
                     graph.add((URIRef(UNIDATA +course_name+"lab"+lec_no), DC.isPartOf, URIRef(UNIDATA + str(course_name))))
                     
@@ -138,11 +139,19 @@ def get_folder_details():
     graph.add((UNIDATA.SOEN6431, RDFS.seeAlso, URIRef(quote(SOEN6431_outline))))
 
 def topics():
-     topics = pd.read_csv(os.getcwd() + os.sep +"topics.csv",encoding="unicode_escape")
+     topics = pd.read_csv(os.getcwd() + os.sep +"final_topics.csv",encoding="unicode_escape")
      for i, row in topics.iterrows():
          lec = URIRef(UNIDATA +row["course"]+"lec"+str(row["lec"]))
          topic = URIRef(DBP + row["topic"])
-         graph.add((lec, UNI.topicIs, topic))
+         graph.add((lec, UNI.topicIs, topic)) 
+         
+def lab_topics():         
+    topics = pd.read_csv(os.getcwd() + os.sep +"final_lab_topics.csv",encoding="unicode_escape")
+    for i, row in topics.iterrows():
+        lab = URIRef(UNIDATA +row["course"]+"lab"+str(row["lec"]))
+        topic = URIRef(DBP + row["topic"])
+        graph.add((lab, UNI.topicIs, topic))     
+         
     
 def student():
     #adding 1st student details
@@ -155,12 +164,12 @@ def student():
     #adding completed courses with grade (1st student)
     graph.add((URIRef(UNIDATA.ManthanSOEN6431), RDF.type, UNI.CompletedCourse))
     graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.studentIs, URIRef(UNIDATA.Manthan)))
-    graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.courseIs, Literal("SOEN6431")))
+    graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.courseIs, URIRef(UNIDATA + str("SOEN6431"))))
     graph.add((URIRef(UNIDATA.ManthanSOEN6431), UNI.grade, Literal("B")))
     
     graph.add((URIRef(UNIDATA.ManthanCOMP6741), RDF.type, UNI.CompletedCourse))
     graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.studentIs, URIRef(UNIDATA.Manthan)))
-    graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.courseIs, Literal("COMP6741")))
+    graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.courseIs, URIRef(UNIDATA + str("COMP6741"))))
     graph.add((URIRef(UNIDATA.ManthanCOMP6741), UNI.grade, Literal("A")))
     
     
@@ -175,12 +184,12 @@ def student():
     #adding completed courses with grade (2nd student)
     graph.add((URIRef(UNIDATA.JaynilSOEN6431), RDF.type, UNI.CompletedCourse))
     graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.studentIs, URIRef(UNIDATA.Jaynil)))
-    graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.courseIs, Literal("SOEN6431")))
+    graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.courseIs, URIRef(UNIDATA + str("SOEN6431"))))
     graph.add((URIRef(UNIDATA.JaynilSOEN6431), UNI.grade, Literal("A")))
     
     graph.add((URIRef(UNIDATA.JaynilCOMP6741), RDF.type, UNI.CompletedCourse))
     graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.studentIs, URIRef(UNIDATA.Jaynil)))
-    graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.courseIs, Literal("COMP6741")))
+    graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.courseIs, URIRef(UNIDATA + str("COMP6741"))))
     graph.add((URIRef(UNIDATA.JaynilCOMP6741), UNI.grade, Literal("B")))
         
 DBP = Namespace("http://dbpedia.org/resource/")
@@ -203,6 +212,7 @@ course()
 get_folder_details()
 student()
 topics()
+lab_topics()
 
 graph.serialize(destination='knowledge_graph.ttl', format='turtle', encoding='utf-8')
 graph.serialize("knowledge_graph_in_nt_format.nt", format="nt")
