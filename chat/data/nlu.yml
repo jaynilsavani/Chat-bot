@@ -1,0 +1,133 @@
+version: "2.0"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - good afternoon
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: course_details
+    examples: |
+      - What is the course [SOEN 6431](course_code) about?
+      - What is the course [COMP 6741](course_code) about?
+
+  - intent: student_details
+    examples: |
+      - Which topics is [Manthan](student_name) competent in?
+
+  - intent: lecture_details
+    examples: |
+      - Which topics were covered in the [1st](lecture_number) [lecture](keyword) of [SOEN 6431](course_code)?
+      - What topics were explained in the [2nd](lecture_number) [lecture](keyword) of [COMP 6741](course_code)?
+      - Provide me the [4th](lecture_number) [lecture](keyword) detail of [SOEN 6431](course_code).
+      - Which topics are covered in [lab](keyword) [1st](lecture_number) of  [COMP 6741](course_code)?
+
+  - intent: topic_details
+    examples: |
+      - Which [lecture](material) covers [SPARQL](topic)?
+      - Which [courses](material) cover [DBPedia](topic)?
+
+  - intent: multiple_lecture_details
+    examples: |
+      - Provide the [worksheets](content_type) of [3rd](lecture1) and [4th](lecture2) week in [COMP6741](course_code)?
+
+  - intent: department_details
+    examples: |
+      - Which subjects are offered by [SOEN](department)?
+
+  - intent: retrieve_subject_name
+    examples: |
+      -  Show me the subejcts related to [Finance](subject_name).
+
+  - intent: retrieve_student_subject
+    examples: |
+      - How many subjects did [Jaynil](student_name) studied?
+
+  - intent: retrieve_student_subject_based_on_grade
+    examples: |
+      - In which subjects [Jaynil](student_name) scored grade [A](grade)?

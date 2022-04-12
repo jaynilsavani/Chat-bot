@@ -1,0 +1,98 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - course_details
+  - student_details
+  - lecture_details
+  - topic_details
+  - multiple_lecture_details
+  - department_details
+  - retrieve_subject_name
+  - retrieve_student_subject
+  - retrieve_student_subject_based_on_grade
+
+actions:
+  - action_course_details
+  - action_student_details
+  - action_lecture_details
+  - action_topic_details
+  - action_multiple_lecture_details
+  - action_department_details
+  - action_subject_name
+  - action_retrieve_student_details
+  - action_retrieve_student_grade_details
+  # - action_restart
+
+entities:
+  - course_code
+  - student_name
+  - lecture_number
+  - keyword
+  - topic
+  - lecture1
+  - lecture2
+  - department
+  - subject_name
+  - grade
+  - material
+  - content_type
+
+slots:
+  course_code:
+    type: text
+  student_name:
+    type: text
+  lecture_number:
+    type: text
+  topic:
+    type: text
+  keyword:
+    type: text
+  lecture1:
+    type: text
+  lecture2:
+    type: text
+  department:
+    type: text
+  subject_name:
+    type: text
+  grade:
+    type: text
+  content_type:
+    type: text
+  material:
+    type: text
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by NS11."
+
+  utter_course_details:
+    - text: "I am a bot, powered by NS12."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,74 @@
+version: "2.0"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: course details
+    steps:
+      - intent: course_details
+      - action: action_course_details
+
+  - story: student details
+    steps:
+      - intent: student_details
+      - action: action_student_details
+
+  - story: lecture details
+    steps:
+      - intent: lecture_details
+      - action: action_lecture_details
+
+  - story: topic details
+    steps:
+      - intent: topic_details
+      - action: action_topic_details
+
+  - story: multiple lecture details
+    steps:
+      - intent: multiple_lecture_details
+      - action: action_multiple_lecture_details
+
+  - story: department details
+    steps:
+      - intent: department_details
+      - action: action_department_details
+
+  - story: retrieve subject name
+    steps:
+      - intent: retrieve_subject_name
+      - action: action_subject_name
+
+  - story: retrieve student's subject
+    steps:
+      - intent: retrieve_student_subject
+      - action: action_retrieve_student_details
+
+  - story: retrieve student's subject based on grade
+    steps:
+      - intent: retrieve_student_subject_based_on_grade
+      - action: action_retrieve_student_grade_details
