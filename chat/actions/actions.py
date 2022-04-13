@@ -42,11 +42,11 @@ PREFIXES = '''
             '''
 def runQuery(query):
     fuseki_url = 'http://localhost:3030/IS/sparql'
-    print('Fuseki Query: ' + query)
+    # print('Fuseki Query: ' + query)
     httpresponse = requests.post(fuseki_url, data={'query': query})
     result = json.loads(httpresponse.text)
-    print('Fuseki Response:')
-    print(result)
+    # print('Fuseki Response:')
+    # print(result)
     return result
 
 class ActionCourseDetails(Action):
@@ -349,7 +349,7 @@ class ActionSubjectNameDetails(Action):
 
         return []  
 
-class ActionRetrieveStudentDetailsDetails(Action):
+class ActionRetrieveStudentDetails(Action):
 
     def name(self) -> Text:
         return "action_retrieve_student_details"
@@ -382,7 +382,7 @@ class ActionRetrieveStudentDetailsDetails(Action):
 
         return []                 
 
-class ActionRetrieveStudentDetailsDetails(Action):
+class ActionRetrieveStudentGradeDetails(Action):
 
     def name(self) -> Text:
         return "action_retrieve_student_grade_details"
@@ -420,10 +420,63 @@ class ActionRetrieveStudentDetailsDetails(Action):
 
         return []                 
 
+class ActionRetrieveLectureContentDetails(Action):
 
-# class ResetSlot(Action):
-#     def name(self) -> Text:
-#         return "action_reset_slot"
+    def name(self) -> Text:
+        return "action_retrieve_lecture_contents"
 
-#     def run(self, dispatcher, tracker, domain):
-#         return [AllSlotsReset()]                
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        lecture_number = tracker.slots['lecture_number'][:1]
+        keyword = tracker.slots['keyword']
+        course_code = tracker.slots['course_code'].replace(" ","")
+
+        result = ""
+        temp = ""
+        if(keyword == "lecture"):
+            temp = '''SELECT ?slide ?topics ?work_sheets
+                        WHERE{
+                            ?lec a uni:Lecture ;
+                                    dc:identifier "%s" ;                                                  
+                                    dc:isPartOf unidata:%s ;
+                            uni:slideIs ?slide ;
+                            uni:topicIs ?topics .
+                    OPTIONAL {?lec uni:worksheetIs ?work_sheets} 
+                }'''%(lecture_number, course_code)    
+        if(keyword == "lab"):
+               temp = '''SELECT ?slide ?topics ?work_sheets
+                        WHERE{
+                            ?lec a uni:Lab ;
+                                    dc:identifier "%s" ;                                                  
+                                    dc:isPartOf unidata:%s ;
+                            uni:slideIs ?slide ;
+                            uni:topicIs ?topics .
+                    OPTIONAL {?lec uni:worksheetIs ?work_sheets} 
+                }'''%(lecture_number, course_code)                 
+        query = PREFIXES + temp
+        result = runQuery(query)
+        headers = result['head']['vars']
+        answer = "Result: \n"
+        content = "true"
+        workSheetContent = "true"
+        if len(result['results']['bindings']) > 0 :
+            for result in result['results']['bindings']:
+                for header in headers:
+                    if header in result.keys():
+                        if(header == "slide" and content == "true"):
+                            content = "false"
+                            answer = answer + " " + result[header]['value']+"\n"        
+                        elif(header == "work_sheets" and workSheetContent == "true"):
+                            workSheetContent = "false"
+                            answer = answer + " " + result[header]['value']+"\n"        
+                        elif(header == "topics"):  
+                            answer = answer + " " + result[header]['value']        
+                answer = answer + "\n"
+        else:
+            answer = "Data is not available."                   
+
+        dispatcher.utter_message(text=f"{answer}")
+
+        return []          

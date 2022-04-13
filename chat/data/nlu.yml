@@ -95,39 +95,62 @@ nlu:
     examples: |
       - What is the course [SOEN 6431](course_code) about?
       - What is the course [COMP 6741](course_code) about?
+      - What is the course [COMP 6231](course_code) about?
+      - What is the course [SOEN 6441](course_code) about?
+      - What is the course [COMP 6961](course_code) about?
 
   - intent: student_details
     examples: |
       - Which topics is [Manthan](student_name) competent in?
+      - Which topics [Manthan](student_name) knows?
+      - Which topics [Jaynil](student_name) knows?
+      - Which topics is [Jaynil](student_name) competent in?
 
   - intent: lecture_details
     examples: |
       - Which topics were covered in the [1st](lecture_number) [lecture](keyword) of [SOEN 6431](course_code)?
       - What topics were explained in the [2nd](lecture_number) [lecture](keyword) of [COMP 6741](course_code)?
-      - Provide me the [4th](lecture_number) [lecture](keyword) detail of [SOEN 6431](course_code).
-      - Which topics are covered in [lab](keyword) [1st](lecture_number) of  [COMP 6741](course_code)?
+      - Which topics are covered in [1st](lecture_number) [lab](keyword) of [COMP 6741](course_code)?
 
   - intent: topic_details
     examples: |
       - Which [lecture](material) covers [SPARQL](topic)?
+      - [SPARQL](topic) is covered in which [lecture](material)?
       - Which [courses](material) cover [DBPedia](topic)?
+      - [DBPedia](topic) is covered in which [courses](material)?
 
   - intent: multiple_lecture_details
     examples: |
       - Provide the [worksheets](content_type) of [3rd](lecture1) and [4th](lecture2) week in [COMP6741](course_code)?
+      - Could you please provide me the [COMP6741](course_code) [worksheets](content_type) from weeks [3rd](lecture1) and [4th](lecture2)?
 
   - intent: department_details
     examples: |
-      - Which subjects are offered by [SOEN](department)?
+      - Which subjects are offered by [SOEN](department) department?
+      - What subjects does the [SOEN](department) department offer?
+      - Which subjects are offered by [COMP](department) department?
+      - What subjects does the [COMP](department) department offer?
 
   - intent: retrieve_subject_name
     examples: |
-      -  Show me the subejcts related to [Finance](subject_name).
+      - Show me the subjects related to [Finance](subject_name).
+      - Show me the [Finance](subject_name) related subjects.
 
   - intent: retrieve_student_subject
     examples: |
       - How many subjects did [Jaynil](student_name) studied?
+      - What was the total number of subjects [Jaynil](student_name) studied?
+      - How many subjects did [Manthan](student_name) studied?
+      - What was the total number of subjects [Manthan](student_name) studied?
 
   - intent: retrieve_student_subject_based_on_grade
     examples: |
       - In which subjects [Jaynil](student_name) scored grade [A](grade)?
+      - Which subjects did [Jaynil](student_name) get an [A](grade) in?
+      - In which subjects [Manthan](student_name) scored grade [A](grade)?
+      - Which subjects did [Manthan](student_name) get an [A](grade) in?
+
+  - intent: retrieve_lecture_contents
+    examples: |
+      - Provide me the [4th](lecture_number) [lecture](keyword) detail of [SOEN 6431](course_code).
+      - Please provide me with [SOEN 6431](course_code) [4th](lecture_number) [lecture](keyword) details.

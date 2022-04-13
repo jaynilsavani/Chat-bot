@@ -17,6 +17,7 @@ intents:
   - retrieve_subject_name
   - retrieve_student_subject
   - retrieve_student_subject_based_on_grade
+  - retrieve_lecture_contents
 
 actions:
   - action_course_details
@@ -28,6 +29,7 @@ actions:
   - action_subject_name
   - action_retrieve_student_details
   - action_retrieve_student_grade_details
+  - action_retrieve_lecture_contents
   # - action_restart
 
 entities:

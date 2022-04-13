@@ -72,3 +72,8 @@ stories:
     steps:
       - intent: retrieve_student_subject_based_on_grade
       - action: action_retrieve_student_grade_details
+
+  - story: retrieve lecture contents
+    steps:
+      - intent: retrieve_lecture_contents
+      - action: action_retrieve_lecture_contents
